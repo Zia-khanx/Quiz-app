@@ -11,6 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('name').innerText = studentDetails.name;
         document.getElementById('batch').innerText = studentDetails.batch;
         document.getElementById('section').innerText = studentDetails.section;
-        document.getElementById('quizMarks').innerText = quizMarks;
+        document.getElementById('quizMarks').innerText = stdentDetails.quizMarks;
     });
     
