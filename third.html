@@ -3,20 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
     <link rel="stylesheet" href="third.css">
-    <title>Quiz Results</title>
-    
 </head>
 <body>
     <div class="container">
-        <h1>Quiz Results</h1>
-        <p><strong>Student Details:</strong></p>
-        <p><strong>Roll Number:</strong> <span id="rollNumber"></span></p>
-        <p><strong>Name:</strong> <span id="name"></span></p>
-        <p><strong>Batch:</strong> <span id="batch"></span></p>
-        <p><strong>Section:</strong> <span id="section"></span></p>
-        <p><strong>Quiz Marks:</strong> <span id="quizMarks"></span></p>
+        <h1> Quiz Results</h1>
+    <div id="results"></div>
     </div>
-    <script src="third.js"></script>
+   
+
+    <script>
+        let studentDetails = JSON.parse(sessionStorage.getItem('studentDetails'));
+        let quizScore = sessionStorage.getItem('quizScore');
+
+        let resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = `
+            <p><strong>Roll Number:</strong> ${studentDetails.rollNumber}</p>
+            <p><strong>Name:</strong> ${studentDetails.name}</p>
+            <p><strong>Batch:</strong> ${studentDetails.batch}</p>
+            <p><strong>Section:</strong> ${studentDetails.section}</p>
+            <p><strong>Total Marks:</strong> ${quizScore}</p>
+        `;
+    </script>
 </body>
 </html>
+
+
